@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 600px;
+			margin: 0 auto;			
+		}
+		span,h1,p{
+			color: #fff;
+		}
+		.a{
+			margin-top: 20px;
+			background-color: green;
+
+		}
+		.b{
+            margin-top: 20px;
+			background-color: blue;
+		}
+		.c{
+            margin-top: 20px;
+			background-color: red;
+		}
+		.d{
+            margin-top: 20px;
+			background-color: orange;
+		}
+
+		span{
+			float: right;
+			top: 5px;
+			right: 20px;
+			position: relative;	
+			font-size: bolder;
+			font-size: 24px;
+			font-weight: bold;		
+
+		}
+		div>.text{float: left;
+			
+		}
+		.text::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		h1,p{
+			display: block;
+			margin: 10px 20px;
+		}
+
+
+	</style>
+</head>
+<body>
+<div class="text">
+	<div class="text a">
+      <span class="close">x</span>
+		<h1>
+			恭喜你
+		</h1>
+		<p>
+			获得本周学霸，继续加油吧
+		</p>
+	</div>
+	<div class="text b">
+      <span class="close">x</span>
+		<h1>
+			通知
+		</h1>
+		<p>
+			晚上上课，不要忘记
+		</p>
+	</div>
+	<div class="text c">
+      <span class="close">x</span>
+		<h1>
+			天啊
+		</h1>
+		<p>
+			竟然几天没做任务
+		</p>
+	</div>
+	<div class="text d">
+      <span class="close">x</span>
+		<h1>
+			警告
+		</h1>
+		<p>
+			学习逆水行舟，不进则退
+		</p>
+	</div>
+</div>
+	
+</body>
+</html>
