@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_1077464_5cu6kuferai.css">
+<link rel="stylesheet"href="http://at.alicdn.com/t/font_1079593_azb54cx6ubv.css">
+<head>
+	<title></title>
+	<style>
+	* {
+ 		margin: 0;
+ 		padding: 0;
+ 		box-sizing: border-box;
+	}
+	a {
+		text-decoration: none;
+	}
+	ul {
+		list-style: none;
+	}
+ 	body {
+ 		font: 14px/1.5 arial;
+		background-color: #fff; 
+		color: #444;
+	}
+	/*common css*/
+	.clearfix::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.layout{
+		width: 1200px;
+		margin: 0 auto;
+	}
+	header{
+		position: relative;
+		height: 100%;
+		min-height: 800px;
+		background: #fff url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/header-bg.jpg) center no-repeat; 
+		background-size: cover;
+	}
+	header::before{
+		content: '';
+		display: block;
+		position: absolute;
+		/*width: 100%;
+		height: 100%;*/
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: rgba(255,255,255,0.2);
+
+	}
+	/* header {
+      height: 100%;
+      min-height: 600px;
+      background: #000 url(https://chenleoxx.github.io/demos/companypage/images/首页2.jpg) center center no-repeat;
+      background-size: cover;
+    }*/
+	header .logo{
+		color: #f7ba3e;
+  		font-size: 32px;
+  		float: left;
+  		margin-top: 10px;
+		}
+	header .nav{
+		float: right;
+	}
+	header .nav>li{
+		float: left;
+	}
+	header .nav>li a{
+		display: block;
+		margin: 10px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		padding: 5px;
+	}
+	header .nav>li a:hover{
+		background-color: #eee;
+	}
+	/*header .intro {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+    }*/
+	header .intro {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: #eee;
+		text-align: center;
+	}
+	header .intro>h3{
+
+		font-size: 40px;
+	}
+	header .intro>h1{
+		font-size: 80px;
+	}
+	header .intro>a{
+		display: inline-block;
+		margin-top: 20px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 18px;
+		padding: 20px 40px;
+		background-color: #f7ba3e;
+	}
+		header .intro>a:hover{
+		background-color: #eee;
+	}
+  	section{
+  		padding-top: 60px;
+  		text-align: center;
+  	}
+  	main>section{
+  		height: 100%;
+  	}
+	section >h1{
+		font-size: 50px;
+	}
+	section >p {
+		padding: 20px;
+	}
+	section>ul .iconfont{
+		font-size: 60px;
+	}
+	section> .background>li{
+		float: left;
+		width:33.333%;
+		padding: 70px 60px;
+	}
+	section>ul p{
+		margin-top: 20px;
+	}
+	/*
+	大图片的时候
+	section .famliy figure{
+		width: calc(33.33%-20px);
+		height: 240px;
+		margin: 10px;
+	}
+	section .famliy a{
+		display: block;
+		height: 180px;
+	}
+	section .famliy img{
+		width: 100%;
+		height: 100%;
+	}*/
+	.content{
+		height: 100%;
+		min-height: 1000px;
+		background-color: #eee;	
+	}
+	.content>p{
+		background-color: #eee;
+	}
+	section .famliy figure{ 
+	float: left;
+	margin-left: 80px;
+	margin-top: 30px;
+	}
+	section .famliy img{
+		width: 300px;
+	}
+	section .famliy figcaption,p{
+		background-color: #fff;
+	}
+ 	section .famliy figcaption{
+ 	margin-top: -5px;
+ 	padding-top: 20px;
+ 	font-weight: bolder;
+ 	font-size: 20px;
+ 	}
+ 	section .famliy p{
+ 	color: #333;
+ 	}
+ 	
+ 	section .timeline> li{
+ 		margin-top:40px;
+ 		position: relative;
+ 	}
+ 	section .timeline> li:nth-child(odd){
+ 		padding-right: calc(50% - 50px);
+ 		text-align: right;
+ 	}
+ 	section .timeline> li::after {
+ 		content: '';
+ 		display: block;
+ 		clear: both;
+ 	}
+ 	section .timeline img,
+ 	section .timeline .img{
+ 	width: 100px;
+ 	height: 100px;
+ 	border-radius: 100%;
+ 	border: 5px solid lightblue;
+ 	}
+ 	section .timeline .img{
+ 	padding-top: 10px;
+ 	font-size: 10px;
+ 	display: inline-block;
+ 	text-align: center;
+ 	}
+ 	section .timeline > li:nth-child(odd) dl {
+ 		margin-left: 120px;
+ 		padding-right: 120px;
+ 	}
+ 	section .timeline > li:nth-child(odd) img{
+ 		float: right;
+ 	}
+ 	section .timeline> li:nth-child(even){
+ 		padding-left: calc(50% - 50px);
+ 		text-align: left;
+ 	}
+ 	 	section .timeline > li:nth-child(even) dl {
+ 		margin-right: 120px;
+ 		padding-left: 120px;
+ 	}
+ 	section .timeline > li:nth-child(even) img{
+ 		float: left;
+ 	}
+ 	section .timeline dt{
+ 		font-size: 16px;
+ 		font-weight: bold;
+ 	}
+ 	section .timeline dd:nth-of-type(1){
+ 		color: #666;
+ 	}
+ 	section .timeline > li::before{
+ 		content: '';
+ 		position: absolute;
+ 		left: 50%;
+ 		top: 100px;
+ 		margin-left: 0px;
+ 		display: inline-block;
+ 		height: 40px;
+ 		width: 4px;
+        background-color: lightblue;
+ 	}	
+ 	section .timeline > li:last-child::before{
+ 		height: 0px;
+ 	}
+
+ 	.team{
+ 		margin-top: 100px;
+ 		padding-top: 100px;
+ 		height: 100%;
+		min-height: 800px;
+		background-color: #eee;	
+ 	}
+ 	.team ul{
+ 	text-align: center; 
+ 	display: inline-block;
+  	}
+ 	.team ul li{
+ 	float: left;
+ 	margin: 50px;
+
+ 	}
+ 	.team ul li img{
+ 		border-radius: 100%;
+ 	}
+ 	.team ul li h3{
+ 		margin-top: 10px;
+ 		font-size: 20px;
+ 	}
+ 	.team ul li p{
+ 		background-color: #eee;
+ 		margin-top: 0;
+ 		color: #777;
+ 	}
+ 	.team ul li>a .iconfont{
+ 		font-size: 30px;
+ 		margin: 20px;
+ 	}
+ 	.team ul li a{
+ 		color: #333;
+ 		display: inline-block;
+ 		border-radius: 100%;
+ 	}
+	.team ul li a:hover{
+ 	opacity: 0.5;
+ 	}
+ 	.team p{
+ 		background-color: #eee;
+ 		color: #777;
+ 	}
+ 	section .link a {
+ 		float: right;
+ 		margin: 40px;
+ 	}
+ 	section .link{
+ 		display: inline-block;
+ 		text-align: center;
+ 		margin: auto;
+ 	}
+ 	.finish{
+ 		position: relative;
+		height: 100%;
+		min-height: 800px;
+		background: black url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/map-image.png) center no-repeat; 
+		background-size: cover;
+	}
+	.finish::before{
+		content: '';
+		display: block;
+		position: absolute;
+		/*width: 100%;
+		height: 100%;*/
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: rgba(255,255,255,0.2);
+	}
+	.finish form div{
+		float: left;
+	}
+	.finish form div input{
+	display: block;
+	width: 500px;
+	margin: 20px;
+	height: 50px;
+	border-radius: 4px;
+	}
+	.finish form .password{
+		float: right;
+		width: 500px;
+		height: 190px;
+		margin: 20px;
+		border-radius: 4px;
+	}
+	.finish form{
+		display: inline-block;
+		text-align: center;
+		margin-top: 50px;
+	}
+    .finish>a{
+    	display:block;
+    	margin-left: calc(50% - 100px);
+    	padding: 20px;
+    	margin-top: 50px;
+    	width: 200px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		background-color: orange;
+    }
+    .finish>a:hover{
+	background-color: #eee;
+	}
+	.finish h3{
+ 		margin-top: 10px;
+ 		font-size: 20px;
+ 	}
+ 	.finish span{
+ 		display: block;
+ 		margin-top: 0;
+ 		color: #777;
+ 	}
+ 	footer{
+  		padding: 60px;
+  		text-align: center;
+  	}
+  	footer span{
+  		float: left;
+  	}
+  	footer .footer{
+  		float: right;
+  	}
+    footer .picture{
+    	display: inline-block;
+    	margin-left: 
+    }
+    footer .picture a span{
+    	font-size: 30px;
+    	margin-right: 20px;
+    	color: #333;
+    }
+    footer .footer a{
+    	color: #777;
+    }
+	</style>
+</head>
+<body>
+<header>
+	<nav class="clearfix layout">
+		<a class="logo" href="">我的世界</a>
+	    <ul class="nav clearfix">
+		<li><a href="">姓名</a></li>
+		<li><a href="">专业</a></li>
+		<li><a href="">学历</a></li>
+		<li><a href="">特长</a></li>
+		<li><a href="">介绍</a></li>
+		</ul>
+	</nav>
+	<div class="intro layout">
+		<h3>欢迎来到我的世界</h3>
+		<h1>我的世界</h1>
+		<a href="">WELCOME YOU</a>
+	</div>
+</header>
+<main>
+	<section>
+		<h1>自 我 展 示</h1>
+		<p>大学以来经历过风雨，成长为现在的我，风风雨雨都在你眼你 请看介绍</p>
+			<ul class="clearfix layout background">
+				<li>
+					<span class="iconfont icon-gril1"></span>
+					<h3>学习</h3>
+					<p>本人成绩优异，年级排名前二十，大一认真学习，取得优异成绩，但由于本身的问题，英语未取得很好成绩，大一，大二，大三参加各种大小赛事，取得优异成绩</p>
+				</li>
+					<li>
+					<span class="iconfont icon-gril2"></span>
+					<h3>教育背景</h3>
+					<p>本人从小读书百卷，但从未吸收到任何东西，但高中突然开窍，读书百卷，开始吸收里面的知识。</p>
+				</li>
+				<li>
+					<span class="iconfont icon-gril3"></span>
+					<h3>想法</h3>
+					<p>本人想法忒多，只要有新的东西我都想去试试，毕竟新的都没写</p>
+				</li>	
+			</ul>
+     </section>
+	<section class="content">
+		<h1>FAMILY</h1>
+		<p>好好学习 天天上上 还是我牛逼没办法</p>
+		<div class="famliy layout clearfix">
+			<figure>
+				<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png"></a>
+				<figcaption>Round Icons</figcaption>
+				<p>Graphic Design</p>
+			</figure>
+			<figure>
+				<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png"></a>
+				<figcaption>Round Icons</figcaption>
+				<p>Graphic Design</p>
+			</figure>	
+				<figure>
+				<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png"></a>
+				<figcaption>Round Icons</figcaption>
+				<p>Graphic Design</p>
+			</figure>
+			<figure>
+				<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png"></a>
+				<figcaption>Round Icons</figcaption>
+				<p>Graphic Design</p>
+			</figure>
+				<figure>
+				<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png"></a>
+				<figcaption>Round Icons</figcaption>
+				<p>Graphic Design</p>
+			</figure>
+				<figure>
+				<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png"></a>
+				<figcaption>Round Icons</figcaption>
+				<p>Graphic Design</p>
+			</figure>
+		</div>
+	</section>
+	<section>
+		<h1>ABOUT</h1>
+		<p>故事的发展趋势</p>
+	     <ul class="timeline">
+			<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png">
+				<dl>
+					<dt>2015</dt>
+					<dd>大学</dd>
+					<dd>在阳关明媚的下午初次见面，如此的羞涩，短短几句寒碜，落下了深刻影响</dd>
+				</dl>
+			</li>
+					<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png">
+				<dl>
+					<dt>2015</dt>
+					<dd>大学</dd>
+					<dd>在阳关明媚的下午初次见面，如此的羞涩，短短几句寒碜，落下了深刻影响</dd>
+				</dl>
+			</li>
+					<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png">
+				<dl>
+					<dt>2015</dt>
+					<dd>大学</dd>
+					<dd>在阳关明媚的下午初次见面，如此的羞涩，短短几句寒碜，落下了深刻影响</dd>
+				</dl>
+			</li>
+					<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png">
+				<dl>
+					<dt>2015</dt>
+					<dd>大学</dd>
+					<dd>在阳关明媚的下午初次见面，如此的羞涩，短短几句寒碜，落下了深刻影响</dd>
+				</dl>
+			</li>
+					<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png">
+				<dl>
+					<dt>2015</dt>
+					<dd>大学</dd>
+					<dd>在阳关明媚的下午初次见面，如此的羞涩，短短几句寒碜，落下了深刻影响</dd>
+				</dl>
+			</li>
+					<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/portfolio/roundicons.png">
+				<dl>
+					<dt>2015</dt>
+					<dd>大学</dd>
+					<dd>在阳关明媚的下午初次见面，如此的羞涩，短短几句寒碜，落下了深刻影响</dd>
+				</dl>
+			</li>
+			<li>
+				<span class="img">finish end for next aeason!</span>
+			</li>
+		</ul>
+	</section>			
+	<section class="team">
+		<h1>我的团队</h1>
+		<p>Lorem ipsum dolor坐在amet consectetur。</p>
+		<ul class="clearfix">
+			<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/team/5.jpg">
+				<h3>Kay Garland</h3>
+				<p>首席设计师</p>
+				<a class="btn" href=""><span class="iconfont icon-in"></span></a>
+				<a href=""><span class="iconfont icon-facebook"></span></a>
+				<a href=""><span class="iconfont icon-E-mail"></span></a>
+				</span>
+			</li>
+			<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/team/5.jpg">
+				<h3>Kay Garland</h3>
+				<p>首席设计师</p>
+				<a href=""><span class="iconfont icon-in"></span></a>
+				<a href=""><span class="iconfont icon-facebook"></span></a>
+				<a href=""><span class="iconfont icon-E-mail"></span></a>
+			</li>
+			<li>
+				<img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/team/5.jpg">
+				<h3>Kay Garland</h3>
+				<p>首席设计师</p>
+				<a class="btn" href=""><span class="iconfont icon-in"></span></a>
+				<a class="btn" href=""><span class="iconfont icon-facebook"></span></a>
+				<a class="btn" href=""><span class="iconfont icon-E-mail"></span></a>
+			</li>
+		</ul>
+	</section>
+	<section>
+		<div class="link clearfix">
+			<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/logos/envato.jpg"></a>
+			<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/logos/designmodo.jpg"></a>
+			<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/logos/themeforest.jpg"></a>
+			<a href=""><img src="http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/logos/creative-market.jpg"></a>
+		</div>
+	</section>
+	<section class="finish">
+		<h1>CONTACT US</h1>
+		<span>Lorem ipsum dolor sit amet consectetur</span>
+		<form class="clearfix">
+			<div>
+			<input placeholder="YOUR NAME">
+        	<input placeholder="YOUR EMAIL">
+        	<input  placeholder="YOUR PHONE">	
+			</div>
+        	<input class="password" placeholder="YOUR MESSAGE">
+		</form>	
+		<a href="#">SEND MESSAGGE</a>	
+	</section>
+	<footer class="clearfix">
+		<span>Copyright © Your Website 2014</span>
+		<div class="iconfont picture">
+		<a href=""><span class="iconfont icon-in"></span></a>
+		<a href=""><span class="iconfont icon-facebook"></span></a>
+		<a href=""><span class="iconfont icon-E-mail"></span></a>
+		</div>
+       <div class="footer">
+       	<a href="">123</a>
+       	<a href="">321</a>
+       </div>
+	</footer>
+</main>
+</body>
+</html>
